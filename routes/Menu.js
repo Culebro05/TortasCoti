@@ -30,8 +30,8 @@ router.get('/', (req, res) => {
   ] )
 })
 
-router.get('/Menu/filter', (req, res) => {
-  res.json(
+router.get('/filter', (req, res) => {
+  res.json([
     {
       Categoria: 'Bebidas',
     },
@@ -39,7 +39,7 @@ router.get('/Menu/filter', (req, res) => {
       Malteadas1L: 'Chocomilk',
       Precio: 30
     }
-    )
+  ])
 })
 
 module.exports = router
