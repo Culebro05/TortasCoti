@@ -16,7 +16,7 @@ console.log('********************')
 console.log(MONGO_URI)
 mongoose.connect(MONGO_URI,
   {useNewUrlParser: true, useUnifiedTopology: true}
-).then(() => console.log('YA ESTAMOS CONECTADOS')).catch(e=>console.log(e))
+).then(() => console.log('listos')).catch(e=>console.log(e))
 
 app.get('/Clientes', (req, res) =>{
   res.send('Bienvenido a mi app de comida')
