@@ -1,12 +1,12 @@
 const express = require('express')
 
 const router = express.Router()
-const pedidos = require('../models/pedidos')
+const ventas = require('../models/ventas')
 
 router.get('/', (req, res) => {
   try{
   res.json({
-    name: 'yare',
+    name: 'Yare',
     lastName: 'Coto'
     })
   }catch(error){
