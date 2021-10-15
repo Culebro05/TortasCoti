@@ -6,8 +6,11 @@ const ventas = require('../models/ventas')
 router.get('/', (req, res) => {
   try{
   res.json({
-    name: 'Yare',
-    lastName: 'Coto'
+    categoria:'bebidas',
+    product: 'refresco 600ml',
+    price:'16',
+    total:'16'
+
     })
   }catch(error){
     console.log(`Error: ${error}`)

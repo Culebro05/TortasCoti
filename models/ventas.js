@@ -2,8 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const ventasSchema = new Schema({
   categoria: String,
-  name: String,
+  product: String,
   price: {type: Number},
+  total: {type: Number},
+
 },{
   timestamps:true
 })
