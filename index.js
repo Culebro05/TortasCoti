@@ -18,7 +18,7 @@ mongoose.connect(MONGO_URI,
   {useNewUrlParser: true, useUnifiedTopology: true}
 ).then(() => console.log('Hola app')).catch(e=>console.log(e))
 
-app.get('/Clientes', (req, res) =>{
+app.get('/', (req, res) =>{
   res.send('Bienvenido a mi app de comida')
 })
 
@@ -26,7 +26,7 @@ app.get('/', (req, res) =>{
   res.send('Hola! Bienvenidos al menu')
 })
 
-app.get('/Pedidos', (req, res) =>{
+app.get('/otra ruta', (req, res) =>{
   res.send('Hello! This is other route')
 })
 
