@@ -6,9 +6,9 @@ const clienteSchema = new Schema({
   lastname: { type: String, default: ''},
   genre: { type: String, enum:['H', 'M', 'U'], default: 'U' },
   phone: { type: String, default: ''},
-  direction: { type: String, default: ''},
+  address: { type: String, default: ''},
   email: { required: true, type: String, lowercase: true, trim: true, unique: true},
-  actualsubjects:[{type: Schema.Types.ObjectId, ref: 'menu'}]
+
   },{
   timestamps: true
 })

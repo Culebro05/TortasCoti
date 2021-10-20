@@ -5,6 +5,7 @@ const ventasSchema = new Schema({
   product: String,
   price: {type: Number},
   total: {type: Number},
+  tipodepago:  String,
 
 },{
   timestamps:true
