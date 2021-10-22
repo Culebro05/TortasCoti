@@ -7,12 +7,11 @@ router.post('/login',
 passport.authenticate('local', {session:false}),
 async (req, res, next) => {
   try{
-res.json(req.user)
-
-}catch(error){
-  next(error)
-}
+     res.json(req.user)
+  }catch(error){
+   next(error)
+  }
  }
- )
+)
 
- module.export=router
+ module.exports = router
