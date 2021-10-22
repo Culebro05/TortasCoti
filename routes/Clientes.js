@@ -1,10 +1,12 @@
 const express = require('express')
+const passport = require('passport')
 
 const router = express.Router()
 const cliente = require('../models/cliente')
 
 router.get('/', (req, res) => {
   try{
+    passport.authenticate('jwt', {session:false}),
   res.json({
     name: 'joseph',
     lastName: 'culebro',
