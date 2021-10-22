@@ -1,6 +1,7 @@
 const express = require('express')
-
+const passport = require('passport')
 const router = express.Router()
+
 const Menu = require('../models/menu')
 
 router.get('/', (req, res) => {
@@ -32,6 +33,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/filter', (req, res) => {
+  passport.authenticate('jwt', {session:false}),
   res.json([
     {
       Categoria: 'Bebidas',
