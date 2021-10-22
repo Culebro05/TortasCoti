@@ -13,7 +13,7 @@ async (req, res, next) => {
       sub: user.id,
       role: user.rol
     }
-    const token = jwt.sing(payload, 'rfVN03zXMKRChg1WTF8mBjbpY764oxlS')
+    const token = jwt.sign(payload, 'rfVN03zXMKRChg1WTF8mBjbpY764oxlS')
     res.json({
       user,
       token
