@@ -15,6 +15,7 @@ if(!user)return done (null, null)
 console.log(user)
 const isMatch = await bcrypt.compare(password, user.password)
 if(!isMatch) throw { status:401, message:'no autorizado', error:true }
+delete user.password
 done(null, user)
 
 }catch(error) {
