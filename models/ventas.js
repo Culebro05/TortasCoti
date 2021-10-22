@@ -1,11 +1,14 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const ventasSchema = new Schema({
-  categoria: String,
-  product: String,
-  price: {type: Number},
-  total: {type: Number},
+
+  vendedor: String,
+  orden: {type: Number},
+  descripcion: String,
+  fecha: {type: Number},
   tipodepago:  String,
+  total: {type: Number},
+
 
 },{
   timestamps:true

@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const pedidosSchema = new Schema({
-  categoria: String,
+  orden: {type: Number},
   product: String,
+  cantidad: {type: Number},
   price: {type: Number},
   email: { required: true, type: String, lowercase: true, trim: true, unique: true},
   direction: { type: String, default: ''},
-  unidades: {type: Number},
+  total: {type: Number},
 },{
   timestamps:true
 })
