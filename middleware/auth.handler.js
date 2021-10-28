@@ -1,5 +1,5 @@
 const{config}=require('../config/index')
-const coti = encodeURIComponent(config.dbApi)
+const coti = encodeURIComponent(config.dbKey)
 
 function checkApiKey(req, res, next){
   try{

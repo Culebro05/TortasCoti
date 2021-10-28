@@ -1,8 +1,11 @@
 const {Strategy, ExtractJwt} = require('passport-jwt')
+const {config} = require ('../../../config/index')
+const TOK = encodeURIComponent (config.dbTok)
+
 
 const options = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey:'rfVN03zXMKRChg1WTF8mBjbpY764oxlS'
+  secretOrKey: TOK
 }
 
 const JwtStrategy = new Strategy(options, (payload, done)=>{
