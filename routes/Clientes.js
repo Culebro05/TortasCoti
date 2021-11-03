@@ -1,25 +1,19 @@
 const express = require('express')
-const passport = require('passport')
-
 const router = express.Router()
-const cliente = require('../models/cliente')
+const passport = require('passport')
+const { ctrlSelectCliente } = require('../controllers/cliente/ctrlSelectCliente')
 
-router.get('/', passport.authenticate('jwt', {session:false}),
+router.get('/',
+passport.authenticate('jwt', {session:false}),
+ctrlSelectCliente
+)
 
-(req, res) => {
-  try{
-  res.json({
-    name: 'joseph',
-    lastName: 'culebro',
-    genre: 'H',
-    phone: '9222293438',
-    email:'josephculebro123@gmail.com'
+router.put('/',
+passport.authenticate('jwt', {session:false}),
+)
 
-
-    })
-  }catch(error){
-    console.log(`Error: ${error}`)
-  }
-})
-
+router.delete('/',
+passport.authenticate('jwt', {session:false}),
+)
 module.exports = router
+
