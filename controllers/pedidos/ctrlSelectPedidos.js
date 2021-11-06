@@ -1,11 +1,11 @@
-const { deleteCliente } = require('../../services/cliente/deleteCliente')
+const { selectPedidos } = require('../../services/pedidos/selectPedidos')
 
-async function ctrlDeleteCliente(req, res){
+async function ctrlSelectPedidos(req, res){
   try{
-  const { email } = req.params
+  const { orden } = req.query
   console.log('Desde el controlador')
-  const cliente = await deleteCliente(email)
-  return res.status(200).send(cliente)
+  const pedidos = await selectPedidos(orden)
+  return res.status(200).send(pedidos)
   }catch(error) {
     return res.status(error.status || 500 ).send({message: error.message})
     }
@@ -14,4 +14,4 @@ async function ctrlDeleteCliente(req, res){
  // return res.status(200).send({genero: genre == 'M'? 'Femenino':'Masculino'})
 }
 
-module.exports = {ctrlDeleteCliente}
+module.exports = {ctrlSelectPedidos}

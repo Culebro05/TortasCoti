@@ -1,12 +1,12 @@
 const Cliente = require('../../models/cliente')
 
-async function updateCliente ({name, lastname, email}){
+async function updateCliente ({name, lastname, phone, address, email}){
   try{
- console.log(' hola dedes el servicio')
+ console.log('Desde el servicio')
  console.log(email)
  const clienteUpdated = await Cliente.findOneAndUpdate(
    {email},
-   {name, lastname}
+   {name, lastname, phone, address},
  )
 
 console.log(clienteUpdated)

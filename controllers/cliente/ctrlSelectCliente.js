@@ -2,8 +2,8 @@ const { selectCliente } = require('../../services/cliente/selectCliente')
 
 async function ctrlSelectCliente(req, res){
   try{
-  const {  genre } = req.query
-  console.log('hola desde el controlador')
+  const { genre } = req.query
+  console.log('Desde el controlador')
   const cliente = await selectCliente(genre)
   return res.status(200).send(cliente)
   }catch(error) {
