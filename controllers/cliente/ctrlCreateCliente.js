@@ -3,7 +3,7 @@ const { createCliente } = require('../../services/cliente/createCliente')
 async function ctrlCreateCliente(req, res){
   try{
   const { name, lastname, genero, phone, address, email } = req.body
-  console.log('Desde el controlador')
+  console.log('Desde los controladores')
   const cliente = await createCliente({name, lastname, genero, phone, address, email })
   return res.status(200).send(cliente)
   }catch(error) {
