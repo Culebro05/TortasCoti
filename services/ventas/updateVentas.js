@@ -5,8 +5,8 @@ async function updateVentas ({vendedor, orden, descripcion, fecha, tipodepago, t
  console.log('Desde el servicio')
  console.log(total)
  const ventasUpdated = await Ventas.findOneAndUpdate(
-   {total },
-   {vendedor, orden, descripcion, fecha, tipodepago},
+   {orden},
+   {vendedor, descripcion, fecha, tipodepago, total},
  )
 
 console.log(ventasUpdated)

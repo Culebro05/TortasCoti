@@ -11,7 +11,7 @@ if(!genre){
 else{
   cliente= await cliente.find({genre})
 }*/
-const ventas = !fecha? await Ventas.find() : await Ventas.find({fecha},'vendedor, orden, descripcion, tipodepago, total')
+const ventas = !fecha? await Ventas.find() : await Ventas.find({fecha},'dia, hora')
 console.log(ventas)
 return ventas
 }catch(error){

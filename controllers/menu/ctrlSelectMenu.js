@@ -2,7 +2,7 @@ const { selectMenu } = require('../../services/menu/selectMenu')
 
 async function ctrlSelectMenu(req, res){
   try{
-  const {  name } = req.query
+  const { name } = req.query
   console.log('hola desde el controlador')
   const menu = await selectMenu(name)
   return res.status(200).send(menu)

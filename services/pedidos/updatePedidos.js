@@ -4,7 +4,7 @@ async function updatePedidos ({orden, product, cantproduct, price, email, addres
   try{
  console.log('Desde el servicio')
  console.log(email)
- const pedidosUpdated = await Cliente.findOneAndUpdate(
+ const pedidosUpdated = await Pedidos.findOneAndUpdate(
    {email},
    {orden, product, cantproduct, price, address, total},
  )

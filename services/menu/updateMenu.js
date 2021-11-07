@@ -6,7 +6,7 @@ async function updateMenu ({categoria, name, price}){
  console.log(name)
  const menuUpdated = await Menu.findOneAndUpdate(
    {name},
-   {categoria, name, price},
+   {categoria, price},
  )
 
 console.log(menuUpdated)

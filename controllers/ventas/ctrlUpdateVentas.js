@@ -3,7 +3,7 @@ const { updateVentas} = require('../../services/ventas/updateVentas')
 async function ctrlUpdateVentas(req, res){
   try{
   const { vendedor, orden, descripcion, fecha, tipodepago} = req.body
-  const { total } = req.params
+  const { orden } = req.params
   console.log('Desde el controlador')
   const ventas = await updateVentas({vendedor, orden, descripcion, fecha, tipodepago, total})
   return res.status(200).send(ventas)

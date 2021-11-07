@@ -4,7 +4,7 @@ async function createPedidos ({orden, product, cantproduct, price, email, addres
   try{
     const pedidosCreated = await pedidos.create({
       orden,
-      params,
+      product,
       cantproduct,
       price,
       email,

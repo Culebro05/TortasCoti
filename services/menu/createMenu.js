@@ -1,6 +1,6 @@
 const Menu = require('../../models/menu')
 
-async function CreateMenu ({categoria, name, price}){
+async function createMenu ({categoria, name, price}){
   try{
     const menuCreated = await Menu.create({
       categoria,
@@ -14,4 +14,4 @@ async function CreateMenu ({categoria, name, price}){
   return {message: error.message}
   }
 }
-module.exports = {CreateMenu}
+module.exports = {createMenu}

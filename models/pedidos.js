@@ -5,9 +5,10 @@ const pedidosSchema = new Schema({
   product: String,
   cantproduct: {type: Number},
   price: {type: Number},
+  total: {type: Number},
   email: { required: true, type: String, lowercase: true, trim: true, unique: true},
   address: { type: String, default: ''},
-  total: {type: Number},
+  fecha: {type: Number, trim: ''}
 },{
   timestamps:true
 })

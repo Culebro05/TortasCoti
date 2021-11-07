@@ -5,7 +5,7 @@ const ventasSchema = new Schema({
   vendedor: String,
   orden: {type: Number},
   descripcion: String,
-  fecha: {type: Number},
+  fecha: {type: Number, trim: ''},
   tipodepago:  String,
   total: {type: Number},
 

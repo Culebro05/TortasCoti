@@ -1,23 +1,33 @@
 const express = require('express')
-const passport = require('passport')
 const router = express.Router()
-const Menu = require('../models/menu')
+const passport = require('passport')
+const { ctrlSelectMenu } = require('../controllers/menu/ctrlSelectMenu')
+const { ctrlUpdateMenu } = require('../controllers/menu/ctrlUpdateMenu')
+const { ctrlCreateMenu } = require('../controllers/menu/ctrlCreateMenu')
+const { ctrlDeleteMenu } = require('../controllers/menu/ctrlDeleteMenu')
+
+
 
 router.get('/',
 passport.authenticate('jwt', {session:false}),
-(req, res) => {
+ctrlSelectMenu
+)
 
-    try{
-         res.json({
+router.post('/',
+passport.authenticate('jwt', {session:false}),
+ctrlCreateMenu
+)
 
-          Categoria: 'Tortas',
-          Especialidad: 'Cubana ',
-          Precio: '35',
+router.put('/:name',
+passport.authenticate('jwt', {session:false}),
+ctrlUpdateMenu
+)
 
-         })
-    }catch(error){
-         console.log(`Error: ${error}`)
-    }
-})
+router.delete('/:categoria',
+passport.authenticate('jwt', {session:false}),
+ctrlDeleteMenu
+)
+
 
 module.exports = router
+

@@ -11,7 +11,7 @@ if(!genre){
 else{
   cliente= await cliente.find({genre})
 }*/
-const clientes = !genre? await Cliente.find() : await Cliente.find({genre},'name, lastname')
+const clientes = !genre? await Cliente.find() : await Cliente.find({genre},'h, m')
 console.log(clientes)
 return clientes
 }catch(error){

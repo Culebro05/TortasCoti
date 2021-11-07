@@ -11,7 +11,7 @@ if(!genre){
 else{
   cliente= await cliente.find({genre})
 }*/
-const menu = !name? await menu.find() : await Menu.find({name},'categoria, price')
+const menu = !name? await Menu.find() : await Menu.find({name},'categoria, price')
 console.log(menu)
 return menu
 }catch(error){
