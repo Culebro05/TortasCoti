@@ -8,6 +8,7 @@ const clienteSchema = new Schema({
   genre: { type: String, enum:['H', 'M', 'U'], default: 'U' },
   phone: {type: Number},
   address: { type: String, default: ''},
+  password: {require: true, type: String},
 
   },{
   timestamps: true
