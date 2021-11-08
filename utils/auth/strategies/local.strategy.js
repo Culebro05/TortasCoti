@@ -7,7 +7,7 @@ try{
 const userTest =[
 
 { name: ' emilio', email: 'user1@gmail.com', password:'$2b$10$bhC/oxayn8dVRxxhZoHWg.FbMa4cgfo4VeO//9NJzlyHRjJOFY84O', rol: 'user'},
-{ name: ' karen', email: 'adm@gmail.com', password:'$2b$10$bhC/oxayn8dVRxxhZoHWg.FbMa4cgfo4VeO//9NJzlyHRjJOFY84O', rol: 'admi'},
+{ name: 'karen', email: 'admin@gmail.com', password:'$2b$10$bhC/oxayn8dVRxxhZoHWg.FbMa4cgfo4VeO//9NJzlyHRjJOFY84O', rol: 'admin'},
 { name: ' diana', email: 'user2@gmail.com', password:'$2b$10$bhC/oxayn8dVRxxhZoHWg.FbMa4cgfo4VeO//9NJzlyHRjJOFY84O',rol: 'user'}
 ]
 const user = userTest[1]

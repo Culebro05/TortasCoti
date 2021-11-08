@@ -1,22 +1,33 @@
 const express = require('express')
-const passport = require('passport')
-
 const router = express.Router()
-const pedidos = require('../models/pedidos')
+const passport = require('passport')
+const { ctrlSelectPedidos } = require('../controllers/pedidos/ctrlSelectPedidos')
+const { ctrlUpdatePedidos } = require('../controllers/pedidos/ctrlUpdatePedidos')
+const { ctrlCreatePedidos } = require('../controllers/pedidos/ctrlCreatePedidos')
+const { ctrlDeletePedidos } = require('../controllers/pedidos/ctrlDeletePedidos')
 
-router.get('/',passport.authenticate('jwt', {session:false}),
-(req, res) => {
-  try{
 
-  res.json({
-    categoria:'bebidas',
-    product: 'refresco 600ml',
-    price:'16',
-    email:'josephculebro123@gmail.com'
-    })
-  }catch(error){
-    console.log(`Error: ${error}`)
-  }
-})
+
+router.get('/',
+passport.authenticate('jwt', {session:false}),
+ctrlSelectPedidos
+)
+
+router.post('/',
+passport.authenticate('jwt', {session:false}),
+ctrlCreatePedidos
+)
+
+router.put('/:email',
+passport.authenticate('jwt', {session:false}),
+ctrlUpdatePedidos
+)
+
+router.delete('/:email',
+passport.authenticate('jwt', {session:false}),
+ctrlDeletePedidos
+)
+
 
 module.exports = router
+

@@ -3,11 +3,12 @@ const Schema = mongoose.Schema
 const pedidosSchema = new Schema({
   orden: {type: Number},
   product: String,
-  cantidad: {type: Number},
+  cantproduct: {type: Number},
   price: {type: Number},
-  email: { required: true, type: String, lowercase: true, trim: true, unique: true},
-  direction: { type: String, default: ''},
   total: {type: Number},
+  email: { required: true, type: String, lowercase: true, trim: true, unique: true},
+  address: { type: String, default: ''},
+  fecha: {type: Number, trim: ''}
 },{
   timestamps:true
 })

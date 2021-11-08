@@ -1,23 +1,32 @@
 const express = require('express')
-const passport = require('passport')
-
 const router = express.Router()
-const ventas = require('../models/ventas')
+const passport = require('passport')
+const { ctrlSelectVentas } = require('../controllers/ventas/ctrlSelectVentas')
+const { ctrlUpdateVentas } = require('../controllers/ventas/ctrlUpdateVentas')
+const { ctrlCreateVentas } = require('../controllers/ventas/ctrlCreateVentas')
+const { ctrlDeleteVentas } = require('../controllers/ventas/ctrlDeleteVentas')
 
-router.get('/', passport.authenticate('jwt', {session:false}),
-(req, res) => {
-  try{
 
-  res.json({
-    categoria:'bebidas',
-    product: 'refresco 600ml',
-    price:'16',
-    total:'16'
 
-    })
-  }catch(error){
-    console.log(`Error: ${error}`)
-  }
-})
+router.get('/:',
+passport.authenticate('jwt', {session:false}),
+ctrlSelectVentas
+)
+
+router.post('/',
+passport.authenticate('jwt', {session:false}),
+ctrlCreateVentas
+)
+
+router.put('/: emailCliente',
+passport.authenticate('jwt', {session:false}),
+ctrlUpdateVentas
+)
+
+router.delete('/: emailCliente',
+passport.authenticate('jwt', {session:false}),
+ctrlDeleteVentas
+)
+
 
 module.exports = router
