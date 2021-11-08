@@ -8,7 +8,7 @@ const { ctrlDeleteVentas } = require('../controllers/ventas/ctrlDeleteVentas')
 
 
 
-router.get('/',
+router.get('/:',
 passport.authenticate('jwt', {session:false}),
 ctrlSelectVentas
 )
@@ -18,12 +18,12 @@ passport.authenticate('jwt', {session:false}),
 ctrlCreateVentas
 )
 
-router.put('/:orden',
+router.put('/: emailCliente',
 passport.authenticate('jwt', {session:false}),
 ctrlUpdateVentas
 )
 
-router.delete('/:orden',
+router.delete('/: emailCliente',
 passport.authenticate('jwt', {session:false}),
 ctrlDeleteVentas
 )

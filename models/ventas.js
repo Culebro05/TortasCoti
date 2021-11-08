@@ -3,11 +3,12 @@ const Schema = mongoose.Schema
 const ventasSchema = new Schema({
 
   vendedor: String,
-  orden: {type: Number},
+  orden: {type: String,},
+  emailCliente:  String,
   descripcion: String,
-  fecha: {type: Number, trim: ''},
+  fecha: {type: String, trim: ''},
   tipodepago:  String,
-  total: {type: Number},
+  total: {type: String,}
 
 
 },{

@@ -1,12 +1,12 @@
 const Ventas = require('../../models/ventas')
 
-async function updateVentas ({vendedor, orden, descripcion, fecha, tipodepago, total}){
+async function updateVentas ({vendedor, orden,  emailCliente, descripcion, fecha, tipodepago, total}){
   try{
  console.log('Desde el servicio')
- console.log(ventas)
+ console.log( emailCliente)
  const ventasUpdated = await Ventas.findOneAndUpdate(
-   {orden},
-   {vendedor, descripcion, fecha, tipodepago, total},
+  {emailCliente},
+   {vendedor, orden,  descripcion, fecha, tipodepago, total},
  )
 
 console.log(ventasUpdated)

@@ -1,4 +1,4 @@
-const { createVentas } = require('../../services/ventas/createVentas.js')
+const { createVentas } = require('../../services/ventas/createVentas')
 
 async function ctrlCreateVentas(req, res){
   try{

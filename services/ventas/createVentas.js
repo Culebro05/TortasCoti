@@ -1,10 +1,11 @@
 const Ventas= require('../../models/ventas')
 
-async function createVentas({vendedor, orden, descripcion, fecha, tipodepago, total}){
+async function createVentas({vendedor, orden,  emailCliente, descripcion, fecha, tipodepago, total}){
   try{
     const ventasCreated = await Ventas.create({
       vendedor,
       orden,
+      emailCliente,
        descripcion,
        fecha,
        tipodepago,
