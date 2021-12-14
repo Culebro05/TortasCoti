@@ -1,9 +1,9 @@
 const Menu= require('../../models/menu')
 
-async function selectMenu (name){
+async function selectMenu (categoria){
   try{
  console.log('Desde el servicio')
- console.log(name)
+ console.log(categoria)
  /*let clientes
 if(!genre){
   cliente=  await cliente.find()
@@ -11,7 +11,7 @@ if(!genre){
 else{
   cliente= await cliente.find({genre})
 }*/
-const menu = !name? await Menu.find() : await Menu.find({name},'categoria, price')
+const menu = !categoria? await Menu.find() : await Menu.find({categoria},'tortas, bebidas')
 console.log(menu)
 return menu
 }catch(error){
