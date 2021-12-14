@@ -5,8 +5,8 @@ async function deletePedidos (email){
     const pedidosDeleted = await Pedidos.deleteOne({email})
     console.log(pedidosDeleted)
     if(pedidosDeleted.deletedCount ==0 )
-      return {pedidosDeleted: pedidosDeleted.deleteCount, message:"Usuario no encontrado"}
-    else return {pedidosDeleted: pedidosDeleted.deleteCount, message: "Usuario eliminado"}
+      return {pedidosDeleted: pedidosDeleted.deleteCount, message:"Pedido no encontrado"}
+    else return {pedidosDeleted: pedidosDeleted.deleteCount, message: "Pedido eliminado"}
   } catch(error){
     return {message: error.message}
   }
