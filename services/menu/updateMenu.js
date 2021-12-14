@@ -1,12 +1,12 @@
 const Menu = require('../../models/menu')
 
-async function updateMenu ({categoria, name, price}){
+async function updateMenu ({name, price}){
   try{
  console.log('Desde el servicio')
  console.log(name)
  const menuUpdated = await Menu.findOneAndUpdate(
    {name},
-   {categoria, price},
+   {price},
  )
 
 console.log(menuUpdated)

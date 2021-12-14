@@ -2,10 +2,10 @@ const { updateMenu } = require('../../services/menu/updateMenu')
 
 async function ctrlUpdateMenu(req, res){
   try{
-  const { categoria, price} = req.body
+  const { price} = req.body
   const { name  } = req.params
   console.log('Desde el controlador')
-  const menu = await updateMenu({categoria, price, name})
+  const menu = await updateMenu({price, name})
   return res.status(200).send(menu)
   }catch(error) {
     return res.status(error.status || 500 ).send({message: error.message})
