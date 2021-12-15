@@ -18,7 +18,7 @@ passport.authenticate('jwt', {session:false}),
 ctrlCreateVentas
 )
 
-router.put('/: vendedor',
+router.put('/: email',
 passport.authenticate('jwt', {session:false}),
 ctrlUpdateVentas
 )

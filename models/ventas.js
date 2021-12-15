@@ -4,7 +4,7 @@ const ventasSchema = new Schema({
 
   vendedor: String,
   orden: {type: String,},
-  emailCliente:  String,
+  email:  String,
   descripcion: String,
   fecha: {type: String, trim: ''},
   tipodepago:  String,

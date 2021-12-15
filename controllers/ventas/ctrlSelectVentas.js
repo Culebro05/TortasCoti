@@ -2,9 +2,9 @@ const { selectVentas } = require('../../services/ventas/selectVentas')
 
 async function ctrlSelectVentas(req, res){
   try{
-  const { emailCliente } = req.query
+  const { orden } = req.query
   console.log('Desde el controladores')
-  const ventas = await selectVentas( emailCliente )
+  const ventas = await selectVentas( orden )
   return res.status(200).send(ventas)
   }catch(error) {
     return res.status(error.status || 500 ).send({message: error.message})

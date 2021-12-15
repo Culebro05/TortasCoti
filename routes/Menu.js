@@ -23,7 +23,7 @@ passport.authenticate('jwt', {session:false}),
 ctrlUpdateMenu
 )
 
-router.delete('/:categoria',
+router.delete('/:name',
 passport.authenticate('jwt', {session:false}),
 ctrlDeleteMenu
 )
