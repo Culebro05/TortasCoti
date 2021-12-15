@@ -23,7 +23,7 @@ passport.authenticate('jwt', {session:false}),
 ctrlUpdateVentas
 )
 
-router.delete('/: vendedor',
+router.delete('/: email',
 passport.authenticate('jwt', {session:false}),
 ctrlDeleteVentas
 )

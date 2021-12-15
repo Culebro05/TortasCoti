@@ -1,8 +1,8 @@
 const Ventas = require('../../models/ventas')
 
-async function deleteVentas (vendedor){
+async function deleteVentas (email){
   try{
-    const ventasDeleted = await Ventas.deleteOne({vendedor})
+    const ventasDeleted = await Ventas.deleteOne({email})
     console.log(ventasDeleted)
     if(ventasDeleted.deletedCount ==0 )
       return {ventasDeleted: ventasDeleted.deleteCount, message:"Usuario no encontrado"}
