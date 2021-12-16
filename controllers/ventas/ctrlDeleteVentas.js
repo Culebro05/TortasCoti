@@ -2,7 +2,7 @@ const {deleteVentas } = require('../../services/ventas/deleteVentas')
 
 async function ctrlDeleteVentas(req, res){
   try{
-  const { email } = req.params
+  const { email} = req.params
   console.log('Desde el controladores')
   const ventas = await deleteVentas( email )
   return res.status(200).send(ventas)
