@@ -11,7 +11,7 @@ if(!genre){
 else{
   cliente= await cliente.find({genre})
 }*/
-const ventas = ! orden? await Ventas.find() : await Ventas.find({ orden},'num')
+const ventas = !orden? await Ventas.find() : await Ventas.find({orden},'num')
 console.log(ventas)
 return ventas
 }catch(error){
