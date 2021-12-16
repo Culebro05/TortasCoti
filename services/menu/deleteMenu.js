@@ -1,8 +1,8 @@
 const Menu = require('../../models/menu')
 
-async function deleteMenu ({name}){
+async function deleteMenu ({_id}){
   try{
-    const menuDeleted = await Menu.deleteOne({name})
+    const menuDeleted = await Menu.deleteOne({_id})
     console.log(menuDeleted)
     if(menuDeleted.deletedCount ==0 )
       return {menuDeleted: menuDeleted.deleteCount, message:"Menu no encontrado"}

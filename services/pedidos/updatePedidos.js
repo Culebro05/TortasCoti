@@ -1,18 +1,15 @@
 const Pedidos = require('../../models/pedidos')
 
-async function updatePedidos ({orden, product, cantproduct, price, email, address, total}){
-  try{
- console.log('Desde el servicio')
- console.log(email)
- const pedidosUpdated = await Pedidos.findOneAndUpdate(
-   {email},
-   {orden, product, cantproduct, price, address, total},
- )
-
-console.log(pedidosUpdated)
-return pedidosUpdated
-}catch(error){
-  return {message: error.message}
-}
+async function updatePedidos({ iva, total, id_producto, _id, cantidad }) {
+  try {
+       const pedidosUpdated = await Pedidos.findOneAndUpdate(
+            { _id },
+            { iva, total, id_producto, cantidad },
+            { new: true }
+       );
+       return pedidosUpdated;
+  } catch (error) {
+       return { message: error.message };
+  }
 }
 module.exports = {updatePedidos}

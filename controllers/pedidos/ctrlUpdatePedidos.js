@@ -1,14 +1,14 @@
 const { updatePedidos } = require('../../services/pedidos/updatePedidos')
-const { getProduct } = require('../../services/menu/getmenu')
+const { getMenu } = require('../../services/menu/getMenu')
 const { calculateTotal, calculateIva } = require('../../utils/auth/calcular/calculoPedidos')
 
 async function ctrlUpdatePedidos(req, res){
   try{
   const { cantproduct, id_producto} = req.body
   const { _id} = req.params
-  const product = await  getProduct(id_producto);
-          const precio = product.precio;
-          const total = calculateTotal(cantproduct,precio);
+  const product = await  getMenu(id_producto);
+          const price = product.price;
+          const total = calculateTotal(cantproduct,price);
           const iva = calculateIva(total)
 
   console.log('Desde el controlador')

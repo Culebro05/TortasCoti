@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const pedidosSchema = new Schema({
   orden: {type: Number},
-  product: String,
+  product: {type: String},
   cantproduct: {type: Number},
   price: {type: Number},
   total: {type: Number},

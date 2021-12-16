@@ -2,9 +2,9 @@ const { deleteMenu } = require('../../services/menu/deleteMenu')
 
 async function ctrlDeleteMenu(req, res){
   try{
-  const {name} = req.params
+  const {_id} = req.params
   console.log('Desde el controlador')
-  const menu = await deleteMenu(name)
+  const menu = await deleteMenu(_id)
   return res.status(200).send(menu)
   }catch(error) {
     return res.status(error.status || 500 ).send({message: error.message})

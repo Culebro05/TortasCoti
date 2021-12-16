@@ -1,12 +1,12 @@
 const { createPedidos } = require('../../services/pedidos/createPedidos' );
-const { getProduct } = require('../../services/menu/getmenu');
+const { getMenu } = require('../../services/menu/getMenu');
 const { calculateTotal, calculateIva } = require('../../utils/auth/calcular/calculoPedidos');
 async function ctrlCreatePedidos(req, res){
   try{
   const { cantproduct, price, email, address,id_producto } = req.body;
-  const product = await  getProduct(id_producto);
-          const precio = product.precio;
-          const total = calculateTotal(cantproduct,precio);
+  const product = await  getMenu(id_producto);
+          const menu = product.price;
+          const total = calculateTotal(cantproduct,price);
           const iva = calculateIva(total)
           const user_id = req.user._id;
 

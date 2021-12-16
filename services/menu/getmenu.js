@@ -1,10 +1,10 @@
-const product = require('../../models/menu');
+const Menu = require('../../models/menu');
 
-async function getProduct(id_producto) {
+async function getMenu(id_producto) {
      try {
-              return  await product.findOne({_id: id_producto})
+              return  await Menu.findOne({_id: id_producto})
      } catch (error) {
           return { message: error.message };
      }
 }
-module.exports = { getProduct };
+module.exports = { getMenu };
