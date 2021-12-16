@@ -1,9 +1,9 @@
 const Ventas = require('../../models/ventas')
 
-async function selectVentas( emailCliente){
+async function selectVentas( email){
   try{
  console.log('Desde el servicio')
- console.log( emailCliente)
+ console.log( email)
  /*let clientes
 if(!genre){
   cliente=  await cliente.find()
@@ -11,7 +11,7 @@ if(!genre){
 else{
   cliente= await cliente.find({genre})
 }*/
-const ventas = ! emailCliente? await Ventas.find() : await Ventas.find({ emailCliente},'name')
+const ventas = ! email? await Ventas.find() : await Ventas.find({ email},'name')
 console.log(ventas)
 return ventas
 }catch(error){

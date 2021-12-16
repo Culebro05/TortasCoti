@@ -2,13 +2,13 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const ventasSchema = new Schema({
 
-  vendedor: String,
-  orden: {type: String,},
-  emailCliente:  String,
-  descripcion: String,
+  vendedor: { type: String},
+  orden: {type: Number},
+  email:  { type: String},
+  descripcion: { type: String},
   fecha: {type: String, trim: ''},
-  tipodepago:  String,
-  total: {type: String,}
+  tipodepago:  {type: String},
+  total: {type: Number},
 
 
 },{

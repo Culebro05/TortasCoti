@@ -18,12 +18,12 @@ passport.authenticate('jwt', {session:false}),
 ctrlCreateVentas
 )
 
-router.put('/: emailCliente',
+router.put('/: email',
 passport.authenticate('jwt', {session:false}),
 ctrlUpdateVentas
 )
 
-router.delete('/: emailCliente',
+router.delete('/: orden',
 passport.authenticate('jwt', {session:false}),
 ctrlDeleteVentas
 )
