@@ -2,10 +2,16 @@ const { createMenu} = require('../../services/menu/createMenu')
 
 async function ctrlCreateMenu(req, res){
   try{
-  const { categoria, name, price} = req.body
-  console.log('Desde el controlador')
-  const menu = await createMenu({ categoria, name, price })
-  return res.status(200).send(menu)
+    const { name, precio, descripcion } = req.body;
+    const user_id = req.user._id;
+    console.log(user_id, req.user);
+    const productos = await createProduct({
+         name,
+         precio,
+         descripcion,
+         user_id,
+    });
+  return res.status(200).send(productos)
   }catch(error) {
     return res.status(error.status || 500 ).send({message: error.message})
     }

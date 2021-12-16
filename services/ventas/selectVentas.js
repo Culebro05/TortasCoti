@@ -2,7 +2,9 @@ const Ventas = require('../../models/ventas')
 
 async function selectVentas( orden){
   try{
+ // eslint-disable-next-line no-console
  console.log('Desde el servicio')
+ // eslint-disable-next-line no-console
  console.log( orden)
  /*let clientes
 if(!genre){
